@@ -1,0 +1,183 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+    padding: 0, 100px;
+    background: url(wallpaper.jpg);
+    height: 100vh;
+    /* display: flex;
+    justify-content: left; */
+}
+
+.zipcode{
+    
+    margin-right: 65%;
+}
+
+section {
+    margin-right: 41%;
+    margin-bottom:  ;
+}
+
+.first-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px ;
+    
+    
+}
+
+.reponseDiv {
+    background-color: rgb(10, 111, 219);
+    width: 800px;
+    height: 600px;
+    margin-left: 30px;
+    border: 3px solid rgb(168, 168, 249);
+    box-shadow: 10px 10px rgb(107, 161, 243);
+    border-radius: 100px;
+}
+
+.requestDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-right: 68%;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+.current-city{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    color: white;
+    font-size: 175%;
+}
+
+.current-temperature{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    color: white;
+    font-size: 1.5em;
+}
+
+.current-date{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    color: white;
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+.current-conditions{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    color: white;
+    
+}
+
+.temperature{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    color: white;
+    
+}
+
+.weather-forecast{
+    margin: top 250px;px;
+    margin-left: 40px;
+    font-size: 50px;
+    font-family: sans-serif;
+    font-style: italic;
+    -webkit-box-reflect: below 1px linear-gradient(trasparent , #0004);
+    outline: none;
+    animation: animate 3s linear infinite;
+  
+}
+
+@keyframes animate {
+    0%, 18%, 20%, 50.1%, 60%, 65.1%, 80%, 90.1%, 92%{
+        color: #32c1e9;
+        text-shadow: none;
+    }
+    18.1%, 20.1%, 30%, 50%, 60.1%, 65%, 80.1%, 90%, 92.1%, 100%{
+        color: rgb(241, 196, 32);
+        text-shadow: 0 0 10px #03bcf4;
+                    0 0 20px #03bcf4;
+                    0 0 40px #03bcf4;
+                    0 0 80px #03bcf4;
+                    0 0 160px #03bcf4;
+    }
+}
+
+.h1 {
+    color: rgba(172, 218, 234, 0.906);
+}
+
+.modReq{
+    display: flex;
+    justify-content: center;
+    color: white;
+    margin-top: 20px;
+    margin-left: 15px;
+    text-align: center;
+}
+
+.day1 {
+    margin-right: 20px;
+}
+
+.day2{
+    margin-right: 18px;
+}
+
+
+#sunny{
+    height: 200px;
+    width: 200px;
+    margin-left: 100px;
+    margin-top: -48px;
+}
+
+.showImage{
+    display: block !important;
+}
+
+#dayOneWeather {
+    height: 50px;
+}
+
+#dayTwoWeather{
+    height: 50px;
+}
+
+#dayThreeWeather{
+    height: 50px;
+}
+
+img{
+    animation: zoom-in 1s linear infinite;
+}
+
+@keyframes zoom-in {
+   45% {
+       width: 55%;
+    }
+}
+    
+    
+  
