@@ -1,6 +1,6 @@
 const AppId = 'baad1d348916ffa8e9e7bc5c4c14a11c'; // replace with your api key
 //40170
-var icon ='http://openweathermap.org/img/wn/10d@2x.png'
+var icon ='https://openweathermap.org/img/wn/10d@2x.png'
 
 // in this function i am getting latitude and longitude of a region by passing zipcode to the weather api
 function getLatLonByZipCode(){
@@ -10,7 +10,7 @@ function getLatLonByZipCode(){
     if(ZipCode == ''){ // validating ZipCode. if it is empty it shows error
         alert('Enter a Zip Code');
     }else{
-         fetch('http://api.openweathermap.org/geo/1.0/zip?zip='+ZipCode+'&appid='+AppId)
+         fetch('https://api.openweathermap.org/geo/1.0/zip?zip='+ZipCode+'&appid='+AppId)
         .then(response => response.json())
         .then(data => {
             console.log(data)
