@@ -10,7 +10,11 @@ function getLatLonByZipCode(){
     if(ZipCode == ''){ // validating ZipCode. if it is empty it shows error
         alert('Enter a Zip Code');
     }else{
-         fetch('https://api.openweathermap.org/geo/1.0/zip?zip='+ZipCode+'&appid='+AppId)
+        var url = 'https://api.openweathermap.org/geo/1.0/zip?zip='+ZipCode+'&appid='+AppId
+        if (location.protocol === "http:"){
+            url = 'http://api.openweathermap.org/geo/1.0/zip?zip='+ZipCode+'&appid='+AppId
+        }
+         fetch(url)
         .then(response => response.json())
         .then(data => {
             console.log(data)
