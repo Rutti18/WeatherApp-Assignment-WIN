@@ -1,13 +1,13 @@
-const AppId = 'baad1d348916ffa8e9e7bc5c4c14a11c'; // replace with your api key
-//40170
+const AppId = 'baad1d348916ffa8e9e7bc5c4c14a11c';
+
 var icon ='https://openweathermap.org/img/wn/10d@2x.png'
 
-// in this function i am getting latitude and longitude of a region by passing zipcode to the weather api
+
 function getLatLonByZipCode(){
 
     var ZipCode = document.getElementById("zipCode").value;
     console.log(ZipCode)
-    if(ZipCode == ''){ // validating ZipCode. if it is empty it shows error
+    if(ZipCode == ''){
         alert('Enter a Zip Code');
     }else{
         var url = 'https://api.openweathermap.org/geo/1.0/zip?zip='+ZipCode+'&appid='+AppId
@@ -19,14 +19,14 @@ function getLatLonByZipCode(){
         .then(data => {
             console.log(data)
 
-            // data is the response data from weather api, validating it with the response data and keys
-           if(data.cod == '404'){ // data.cod and data.message is the key from response data  , it returns when invalid zipcode is given
+            
+           if(data.cod == '404'){ 
             alert(data.message);
            }else{
-            document.getElementById('city').innerHTML = data.name; // Printing thr city name
+            document.getElementById('city').innerHTML = data.name;
             let lat = data.lat;
             let lon = data.lon;
-            //passing latitude and longitude to a function
+            
             getWeatherReport(lat,lon);
            }
             
@@ -34,7 +34,7 @@ function getLatLonByZipCode(){
     }
 }
 
-//in this function i am getting latitude and longitude and passing it to weather api to get weather data
+
 function getWeatherReport(lat,lon){
     fetch('https://api.openweathermap.org/data/2.5/onecall?lat='+lat+'&lon='+lon+'&units=imperial&appid='+AppId)
     .then(response => response.json())
@@ -64,7 +64,7 @@ function getWeatherReport(lat,lon){
             let hourlyRecords = data.hourly;
             let minTemp = maxTemp = '';
 
-            /* use this for loop for getting min and max */
+            
             for (let i=0 ; i<8 ; i++){
                 if(i == 0){
                     minTemp =  hourlyRecords[i]['temp'];
@@ -76,7 +76,7 @@ function getWeatherReport(lat,lon){
             TempHiLo = +maxTemp+' <span>&#8457;</span>' + ' / '+minTemp+' <span>&#8457;</span>';
             document.getElementById('TempHiLow').innerHTML = TempHiLo; 
 
-            //Moderate Requirements to get weather report for next three days
+            
             getNextThreeDaysForeCast(data.daily);
         }        
     });
@@ -120,7 +120,7 @@ console.log(DayOne.weather[0].description,DayTwo.weather[0].description,DayThree
         document.getElementById('dayTwoCond').innerHTML = DayTwo.weather[0].description;
         document.getElementById('dayThreeCond').innerHTML = DayThree.weather[0].description;
 
-        // document.getElementById('dayThreeCondt').innerHTML = DayThree.weather[0].description;
+        
     document.getElementById('dayOneWeather').src = './icon/'+DayOne.weather[0].icon+"@2x.png"; 
     document.getElementById('dayTwoWeather').src = './icon/'+DayTwo.weather[0].icon+"@2x.png"; 
     document.getElementById('dayThreeWeather').src = './icon/'+DayThree.weather[0].icon+"@2x.png"; 
